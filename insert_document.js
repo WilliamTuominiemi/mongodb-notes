@@ -1,7 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 
-//Insert document(object) into collection
+// Insert document(object) into collection
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   var dbo = db.db("mydb");
@@ -13,7 +13,7 @@ MongoClient.connect(url, function(err, db) {
   });
 });
 
-//Insert multiple document (objects)
+// Insert multiple document (objects)
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("mydb");
@@ -40,7 +40,7 @@ MongoClient.connect(url, function(err, db) {
     });
   });
 
-//Specify _id field for document
+// Specify _id field for document
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("mydb");

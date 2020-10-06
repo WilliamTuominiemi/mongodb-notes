@@ -1,7 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 
-//delete one document
+// Delete one document
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   var dbo = db.db("mydb");
@@ -13,11 +13,11 @@ MongoClient.connect(url, function(err, db) {
   });
 });
 
-//delete multiple documents
+// Delete multiple documents
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("mydb");
-    var myquery = { address: /^O/ }; //deletes all documents that start with "O"
+    var myquery = { address: /^O/ }; // Deletes all documents that start with "O"
     dbo.collection("customers").deleteMany(myquery, function(err, obj) {
       if (err) throw err;
       console.log(obj.result.n + " document(s) deleted");

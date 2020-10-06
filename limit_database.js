@@ -1,13 +1,13 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 
-// Delete whole collection
+// limit the result
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   var dbo = db.db("mydb");
-  dbo.collection("customers").drop(function(err, delOK) {
+  dbo.collection("customers").find().limit(5).toArray(function(err, result) {
     if (err) throw err;
-    if (delOK) console.log("Collection deleted");
+    console.log(result);
     db.close();
   });
 });

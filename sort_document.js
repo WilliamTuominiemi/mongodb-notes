@@ -1,7 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 
-//Filter find() result with query object
+// Filter find() result with query object
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   var dbo = db.db("mydb");
@@ -13,7 +13,7 @@ MongoClient.connect(url, function(err, db) {
   });
 });
 
-//Only find documents where "adress" field starst with letter "S"
+// Only find documents where "adress" field starst with letter "S"
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("mydb");
@@ -25,7 +25,7 @@ MongoClient.connect(url, function(err, db) {
     });
   });
 
-  //sort the result of find() with sort()
+  // Sort the result of find() with sort()
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("mydb");
